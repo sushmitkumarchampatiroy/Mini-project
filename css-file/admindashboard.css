@@ -1,0 +1,493 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFE2AF;
+}
+
+#topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #007979;
+    color: #ffffff;
+    padding: 12px 24px;
+    height: 60px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #FFE2AF;
+}
+
+.admin-name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#togglemenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 12px;
+    background-color: #ffffff;
+    border: 1.5px solid #24B1B1;
+    border-radius: 6px;
+    color: #007979;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#togglemenu:hover {
+    background-color: #007979;
+    color: #ffffff;
+}
+
+#togglemenu .material-icons {
+    font-size: 22px;
+}
+
+section {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 230px;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+section:target {
+    display: flex;
+}
+
+#sidebar {
+    width: 230px;
+    height: calc(100vh - 60px);
+    background-color: #ffffff;
+    border-right: 2px solid #24B1B1;
+    padding: 20px 0;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.nav-link {
+    display: block;
+    padding: 12px 24px;
+    color: #333333;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    border-left: 4px solid transparent;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: #FFE2AF;
+    border-left: 4px solid #24B1B1;
+}
+
+.nav-link:active,
+.nav-link.active {
+    background-color: #e6f7f7;
+    border-left: 4px solid #E37434;
+    color: #007979;
+    font-weight: 700;
+}
+
+.student,
+.teacher,
+.sectionsubject,
+.timetablehub {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.studentbutton,
+.teacherbutton,
+.sectionsubjectbutton,
+.timetablebutton {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #007979;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.studentbutton:hover,
+.teacherbutton:hover,
+.sectionsubjectbutton:hover,
+.timetablebutton:hover {
+    background-color: #24B1B1;
+}
+
+.searchstudent,
+.addstudent,
+.deletestudent,
+.searchteacher,
+.addteacher,
+.deleteteacher {
+    background-color: #ffffff;
+    border: 2px solid #24B1B1;
+    border-radius: 10px;
+    padding: 30px 35px;
+    max-width: 480px;
+}
+
+.searchstudent h1,
+.addstudent h1,
+.deletestudent h1,
+.searchteacher h1,
+.addteacher h1,
+.deleteteacher h1 {
+    color: #007979;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.managesections,
+.managesubjects,
+.mapping,
+.addtimetable {
+    background-color: #ffffff;
+    border: 2px solid #24B1B1;
+    border-radius: 10px;
+    padding: 30px 35px;
+    max-width: 700px;
+    width: 100%;
+}
+
+.managesections h1,
+.managesubjects h1,
+.mapping h1,
+.addtimetable h1 {
+    color: #007979;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.viewtimetable {
+    background-color: #ffffff;
+    border: 2px solid #24B1B1;
+    border-radius: 10px;
+    padding: 30px 35px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.viewtimetable h1 {
+    color: #007979;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.viewtimetable label {
+    color: #007979;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.viewtimetable select {
+    padding: 8px 12px;
+    border: 1.5px solid #24B1B1;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.managesections h2,
+.managesubjects h2,
+.mapping h2 {
+    color: #007979;
+    font-size: 18px;
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+.datatable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.datatable th,
+.datatable td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #24B1B1;
+    font-size: 14px;
+}
+
+.datatable th {
+    background-color: #007979;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.empty-state {
+    text-align: center;
+    color: #999999;
+    font-style: italic;
+    padding: 16px;
+}
+
+.timetablegrid {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.timetablegrid th,
+.timetablegrid td {
+    border: 1px solid #24B1B1;
+    padding: 10px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.timetablegrid th {
+    background-color: #007979;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.timetimecol {
+    background-color: #FFE2AF;
+    color: #007979;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.timetablecell {
+    height: 60px;
+}
+
+.timetablecell a {
+    display: block;
+    color: #999999;
+    text-decoration: none;
+    font-size: 13px;
+    border: 1px dashed #24B1B1;
+    border-radius: 6px;
+    padding: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.timetablecell a:hover {
+    background-color: #e6f7f7;
+    color: #007979;
+}
+
+.blockedlabel {
+    display: block;
+    background-color: #f2f2f2;
+    color: #999999;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.rowdelete {
+    color: #E37434;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.rowdelete:hover {
+    text-decoration: underline;
+}
+
+.searchstudents1,
+.addstudents1,
+.deletestudents1,
+.deleteteachers1,
+.addsectionform,
+.addsubjectform,
+.mappingform,
+.addtimetableform {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchstudents1 label,
+.addstudents1 label,
+.deletestudents1 label,
+.deleteteachers1 label,
+.addsectionform label,
+.addsubjectform label,
+.mappingform label,
+.addtimetableform label {
+    color: #007979;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 6px;
+}
+
+.searchstudents1 label:first-of-type,
+.addstudents1 label:first-of-type,
+.deletestudents1 label:first-of-type,
+.deleteteachers1 label:first-of-type,
+.addsectionform label:first-of-type,
+.addsubjectform label:first-of-type,
+.mappingform label:first-of-type,
+.addtimetableform label:first-of-type {
+    margin-top: 0;
+}
+
+.searchstudents1 input,
+.addstudents1 input,
+.addstudents1 select,
+.deletestudents1 input,
+.deleteteachers1 input,
+.addsectionform input,
+.addsectionform select,
+.addsubjectform input,
+.addsubjectform select,
+.mappingform select,
+.addtimetableform input,
+.addtimetableform select {
+    padding: 10px 12px;
+    border: 1.5px solid #24B1B1;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333333;
+    outline: none;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchstudents1 input:focus,
+.addstudents1 input:focus,
+.addstudents1 select:focus,
+.deletestudents1 input:focus,
+.deleteteachers1 input:focus,
+.addsectionform input:focus,
+.addsectionform select:focus,
+.addsubjectform input:focus,
+.addsubjectform select:focus,
+.mappingform select:focus,
+.addtimetableform input:focus,
+.addtimetableform select:focus {
+    border-color: #E37434;
+    box-shadow: 0 0 0 3px rgba(227, 116, 52, 0.15);
+}
+
+.addstudents1 select:disabled {
+    background-color: #f2f2f2;
+    color: #999999;
+    cursor: not-allowed;
+}
+
+.addstudents1 select[multiple],
+.addsubjectform select[multiple] {
+    height: 120px;
+}
+
+#searchbtn,
+#addbtn,
+#deletebtn,
+#tsearchbtn,
+#taddbtn,
+#tdeletebtn,
+#addsectionbtn,
+#addsubjectbtn,
+#assignbtn,
+#addtimetablebtn {
+    margin-top: 24px;
+    padding: 12px;
+    background-color: #007979;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#searchbtn:hover,
+#addbtn:hover,
+#deletebtn:hover,
+#tsearchbtn:hover,
+#taddbtn:hover,
+#tdeletebtn:hover,
+#addsectionbtn:hover,
+#addsubjectbtn:hover,
+#assignbtn:hover,
+#addtimetablebtn:hover {
+    background-color: #24B1B1;
+}
+
+#deletebtn,
+#tdeletebtn {
+    background-color: #E37434;
+}
+
+#deletebtn:hover,
+#tdeletebtn:hover {
+    background-color: #c9631f;
+}
+
+.backlink {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    color: #E37434;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.backlink:hover {
+    text-decoration: underline;
+}
+
+.backlink .material-icons {
+    font-size: 18px;
+}

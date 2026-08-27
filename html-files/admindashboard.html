@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Attendance System</title>
+    <link rel="stylesheet" href="/css-file/admindashboard.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="topbar" id="topbar">
+        <div class="logo">Smart Attendance System</div>
+
+        <div class="admin-profile">
+            <img src="/download.png" alt="Admin profile picture" class="admin-avatar">
+            <span class="admin-name">Name Of Admin</span>
+        </div>
+    </nav>
+    <aside class="sidebar" id="sidebar" >
+        <ul class="nav-links">
+            <li class="nav-item"><a href="#navstudent" class="nav-link">Students</a></li>
+            <li class="nav-item"><a href="#navteacher" class="nav-link">Teachers</a></li>
+            <li class="nav-item"><a href="#navsectionsubject" class="nav-link">Sections & Subjects</a></li>
+            <li class="nav-item"><a href="#navtimetable" class="nav-link">Timetable Management</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Holiday Calendar</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Attendance correction</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Audit log</a></li>
+        </ul>
+    </aside>
+    <!-- section:student -->
+    <section id="navstudent">
+        <div class="student">
+            <div class="studentsearchbtn">
+                <a href="#seastd" class="studentbutton">Search Student</a>
+            </div>
+            <div class="studentaddbtn">
+                <a href="#addstd" class="studentbutton">Add Student</a>
+            </div>
+            <div class="studentdeletebtn">
+                <a href="#delstd" class="studentbutton">Delete Student</a>
+            </div>
+        </div>
+    </section>
+    <section id="seastd">
+        <div class="searchstudent">
+            <h1 id="searchhead">Searching Student</h1>
+            <form class="searchstudents1">
+                <label for="searchuserid">Enter Student's Admission Number</label>
+                <input type="text" name="userid" pattern="[A-Za-z0-9]+" id="searchuserid"> 
+                <button type="submit" id="searchbtn">Search Student</button>
+            </form>
+            <a href="#navstudent" class="backlink"> <span class="material-icons" id="menuicon1">arrow_back</span>Back</a>
+        </div>
+    </section>
+    <section id="addstd">
+        <div class="addstudent">
+            <h1 id="addhead">Adding Student</h1>
+            <form class="addstudents1">
+                <label for="adduserid">Enter Student's Admission Number</label>
+                <input type="text" name="userid" id="adduserid" pattern="[A-Za-z0-9]+" required>
+                <label for="addname">Enter Student's Name</label>
+                <input type="text" name="name" id="addname" pattern="[A-Za-z\s]+" required> 
+                <label for="addbranch">Enter Student's Branch</label>
+                <select name="branch" id="addbranch" required>
+                    <option value="" disabled selected>Select Branch first</option>
+                    <option value="cse">Computer Science Engineering</option>
+                    <option value="ai/ml">Computer Science AI/ML</option>
+                    <option value="ds">Computer Science DS</option>
+                    <option value="ai">Computer Science AI</option>
+                    <option value="ec">Electronics & Communication</option>
+                    <option value="mech">Mechanical</option>
+                </select>
+                <label for="addyear">Enter Student's Year</label>
+                <select name="year" id="addyear" required>
+                    <option value="" disabled selected>Select Year first</option>
+                    <option value="first">1<sup>st</sup></option>
+                    <option value="second">2<sup>nd</sup></option>
+                    <option value="third">3<sup>rd</sup></option>
+                    <option value="fourth">4<sup>th</sup></option>
+                </select> 
+                <label for="addsection">Enter Student's Section</label>
+                <select name="section" id="addsection" required>
+                    <option value="" disabled selected>Select Year first</option>
+                    <option value="2A">2A</option>
+                    <option value="2B">2B</option>
+                    <option value="2C">2C</option>
+                    <option value="2J">2J</option>
+                </select> 
+                <label for="adddob">Enter Student's Date Of Birth</label>
+                <input type="date" name="DOB" id="adddob" required> 
+                <label for="addemail">Enter Student's E-mail Address</label>
+                <input type="email" name="email" id="addemail" required>  
+                <button type="submit" id="addbtn">Add Student</button>
+            </form>
+            <a href="#navstudent" class="backlink"> <span class="material-icons" id="menuicon2">arrow_back</span>Back</a>
+        </div>
+    </section>
+    <section id="delstd">
+        <div class="deletestudent">
+            <h1 id="deletehead">Deleting Student</h1>
+            <form class="deletestudents1">
+                <label for="deleteuserid">Enter Student's Admission Number</label>
+                <input type="text" name="userid" pattern="[A-Za-z0-9]+" id="deleteuserid"> 
+                <button type="submit" id="deletebtn">Delete Student</button>
+            </form>
+            <a href="#navstudent" class="backlink"> <span class="material-icons" id="menuicon3">arrow_back</span>Back</a>
+        </div>
+    </section>
+    <!-- section:teacher -->
+    <section id="navteacher">
+        <div class="teacher">
+            <div class="teachersearchbtn">
+                <a href="#seatea" class="teacherbutton">Search Teacher</a>
+            </div>
+            <div class="teacheraddbtn">
+                <a href="#addtea" class="teacherbutton">Add Teacher</a>
+            </div>
+            <div class="teacherdeletebtn">
+                <a href="#deltea" class="teacherbutton">Delete Teacher</a>
+            </div>
+        </div>
+    </section>
+    <section id="seatea">
+        <div class="searchteacher">
+            <h1 id="tsearchhead">Searching Teacher</h1>
+            <form class="searchstudents1">
+                <label for="searchuseridtea">Enter Teacher's Identity Number</label>
+                <input type="text" name="tuserid" id="searchuseridtea" pattern="[A-Za-z0-9]+"> 
+                <button type="submit" id="tsearchbtn">Search Teacher</button>
+            </form>
+            <a href="#navteacher" class="backlink"> <span class="material-icons" id="menuicon4">arrow_back</span>Back</a>
+        </div>
+    </section>
+    <section id="addtea">
+        <div class="addteacher">
+            <h1 id="taddhead">Adding Teacher</h1>
+            <form class="addstudents1">
+                <label for="adduseridtea">Enter Teacher's Identity Number</label>
+                <input type="text" name="tuserid" id="adduseridtea" pattern="[A-Za-z0-9]+" required>
+                <label for="taddname">Enter Teacher's Name</label>
+                <input type="text" name="tname" id="taddname" pattern="[A-Za-z\s]+" required> 
+                <label for="addqua1">Enter Teacher's Qualification</label>
+                <select name="qualification" id="addqua1" required>
+                    <option value="" disabled selected>Select Qualification first</option>
+                    <option value="btech">B.Tech / B.E.</option>
+                    <option value="mtech">M.Tech / M.E.</option>
+                    <option value="bsc">B.Sc</option>
+                    <option value="msc">M.Sc</option>
+                    <option value="bca">BCA</option>
+                    <option value="mca">MCA</option>
+                    <option value="bed">B.Ed</option>
+                    <option value="med">M.Ed</option>
+                    <option value="mba">MBA</option>
+                    <option value="phd">Ph.D</option>
+                </select>
+                <label for="taddsubject">Enter Teacher's Subject</label>
+                <select name="tsubject" id="taddsubject" required multiple>
+                    <option value="" disabled selected>Select Subject</option>
+                    <option value="dsa">Data Structures & Algorithms</option>
+                    <option value="python">Python</option>
+                    <option value="coa">Computer Operation & Architeture </option>
+                    <option value="de">Digital Electronics</option>
+                    <option value="tc">Technical Communication</option>
+                    <option value="dstl">DSTL</option>
+                </select>
+
+                <label for="taddsections">Select Sections Taught (hold Ctrl to select multiple)</label>
+                <select name="tsections" id="taddsections" multiple required>
+                    <option value="2A">2A</option>
+                    <option value="2B">2B</option>
+                    <option value="2C">2C</option>
+                    <option value="2J">2J</option>
+                </select>
+                <label for="tadddob">Enter Teacher's Date Of Birth</label>
+                <input type="date" name="tDOB" id="tadddob" required> 
+                <label for="taddemail">Enter Teacher's E-mail Address</label>
+                <input type="email" name="temail" id="taddemail" required>  
+                <button type="submit" id="taddbtn">Add Teacher</button>
+            </form>
+            <a href="#navteacher" class="backlink"> <span class="material-icons" id="menuicon5">arrow_back</span>Back</a>
+        </div>
+    </section>
+    <section id="deltea">
+        <div class="deleteteacher">
+            <h1 id="tdeletehead">Deleting Teacher</h1>
+            <form class="deleteteachers1">
+                <label for="tdeleteuserid">Enter Teacher's Identity Number</label>
+                <input type="text" name="tuserid" id="tdeleteuserid" pattern="[A-Za-z0-9]+"> 
+                <button type="submit" id="tdeletebtn">Delete Teacher</button>
+            </form>
+            <a href="#navteacher" class="backlink"> <span class="material-icons" id="menuicon6">arrow_back</span>Back</a>
+        </div>
+    </section>
+    <!-- section and subject -->
+    <section id="navsectionsubject">
+        <div class="sectionsubject">
+            <div class="sectionmanagebtn">
+                <a href="#managesections" class="sectionsubjectbutton">Manage Sections</a>
+            </div>
+            <div class="subjectmanagebtn">
+                <a href="#managesubjects" class="sectionsubjectbutton">Manage Subjects</a>
+            </div>
+            <div class="mappingbtn">
+                <a href="#mapping" class="sectionsubjectbutton">Teacher-Subject-Section Mapping</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="managesections">
+        <div class="managesections">
+            <h1>Manage Sections</h1>
+            <table class="datatable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Branch</th>
+                        <th>Year</th>
+                        <th>Student Count</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" class="empty-state">No sections added yet</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Add Section</h2>
+            <form class="addsectionform">
+                <label for="sectionname">Enter Section Name</label>
+                <input type="text" name="sectionname" id="sectionname" required>
+
+                <label for="sectionyear">Enter Year</label>
+                <select name="sectionyear" id="sectionyear" required>
+                    <option value="" disabled selected>Select Year</option>
+                    <option value="first">1st</option>
+                    <option value="second">2nd</option>
+                    <option value="third">3rd</option>
+                    <option value="fourth">4th</option>
+                </select>
+
+                <label for="sectionbranch">Enter Branch</label>
+                <select name="sectionbranch" id="sectionbranch" required>
+                    <option value="" disabled selected>Select Branch</option>
+                    <option value="cse">Computer Science Engineering</option>
+                    <option value="aiml">Computer Science AI/ML</option>
+                    <option value="ds">Computer Science DS</option>
+                    <option value="ai">Computer Science AI</option>
+                    <option value="ec">Electronics & Communication</option>
+                    <option value="mech">Mechanical</option>
+                </select>
+
+                <button type="submit" id="addsectionbtn">Add Section</button>
+            </form>
+            <a href="#navsectionsubject" class="backlink"><span class="material-icons" id="menuicon7">arrow_back</span>Back</a>
+        </div>
+    </section>
+
+    <section id="managesubjects">
+        <div class="managesubjects">
+            <h1>Manage Subjects</h1>
+            <table class="datatable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Code</th>
+                        <th>Branch</th>
+                        <th>Year</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" class="empty-state">No subjects added yet</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Add Subject</h2>
+            <form class="addsubjectform">
+                <label for="subjectname">Enter Subject Name</label>
+                <select name="tsubject" id="taddsubject" required multiple>
+                    <option value="" disabled selected>Select Subject</option>
+                    <option value="dsa">Data Structures & Algorithms</option>
+                    <option value="python">Python</option>
+                    <option value="coa">Computer Operation & Architeture </option>
+                    <option value="de">Digital Electronics</option>
+                    <option value="tc">Technical Communication</option>
+                    <option value="dstl">DSTL</option>
+                </select>
+
+                <label for="subjectbranch">Enter Branch</label>
+                <select name="subjectbranch" id="subjectbranch" required>
+                    <option value="" disabled selected>Select Branch</option>
+                    <option value="cse">Computer Science Engineering</option>
+                    <option value="aiml">Computer Science AI/ML</option>
+                    <option value="ds">Computer Science DS</option>
+                    <option value="ai">Computer Science AI</option>
+                    <option value="ec">Electronics & Communication</option>
+                    <option value="mech">Mechanical</option>
+                </select>
+
+                <label for="subjectyear">Enter Year</label>
+                <select name="subjectyear" id="subjectyear" required>
+                    <option value="" disabled selected>Select Year</option>
+                    <option value="first">1st</option>
+                    <option value="second">2nd</option>
+                    <option value="third">3rd</option>
+                    <option value="fourth">4th</option>
+                </select>
+
+                <button type="submit" id="addsubjectbtn">Add Subject</button>
+            </form>
+            <a href="#navsectionsubject" class="backlink"><span class="material-icons" id="menuicon8">arrow_back</span>Back</a>
+        </div>
+    </section>
+
+    <section id="mapping">
+        <div class="mapping">
+            <h1>Teacher-Subject-Section Mapping</h1>
+            <form class="mappingform">
+                <label for="mapteacher">Select Teacher</label>
+                <select name="mapteacher" id="mapteacher" required>
+                    <option value="" disabled selected>Select Teacher</option>
+                </select>
+
+                <label for="mapsubject">Select Subject</label>
+                <select name="mapsubject" id="mapsubject" required>
+                    <option value="" disabled selected>Select Subject</option>
+                    <option value="dsa">Data Structures & Algorithms</option>
+                    <option value="python">Python</option>
+                    <option value="coa">Computer Operation & Architeture </option>
+                    <option value="de">Digital Electronics</option>
+                    <option value="tc">Technical Communication</option>
+                    <option value="dstl">DSTL</option>
+                </select>
+
+                <label for="mapsection">Select Section</label>
+                <select name="mapsection" id="mapsection" required multiple>
+                    <option value="" disabled selected>Select Section</option>
+                    <option value="2A">2A</option>
+                    <option value="2B">2B</option>
+                    <option value="2C">2C</option>
+                    <option value="2J">2J</option>
+                </select>
+
+                <button type="submit" id="assignbtn">Assign</button>
+            </form>
+
+            <table class="datatable">
+                <thead>
+                    <tr>
+                        <th>Teacher</th>
+                        <th>Subject</th>
+                        <th>Section</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" class="empty-state">No mappings added yet</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#navsectionsubject" class="backlink"><span class="material-icons" id="menuicon9">arrow_back</span>Back</a>
+        </div>
+    </section>
+    <!-- timetable -->
+     <section id="navtimetable">
+        <div class="timetablehub">
+            <div class="viewtimetablebtn">
+                <a href="#viewtimetable" class="timetablebutton">View Timetable</a>
+            </div>
+            <div class="addtimetablebtn">
+                <a href="#addtimetable" class="timetablebutton">Add Timetable Entry</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="viewtimetable">
+        <div class="viewtimetable">
+            <h1>Weekly Timetable</h1>
+
+            <label for="timetablefilter">Filter by Section</label>
+            <select name="timetablefilter" id="timetablefilter">
+                <option value="" selected>All Sections</option>
+                <option value="2A">2A</option>
+                <option value="2B">2B</option>
+                <option value="2C">2C</option>
+                <option value="2J">2J</option>
+            </select>
+
+            <table class="timetablegrid">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="timetimecol">9:10 - 10:00</td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="monday" data-start="09:10" data-end="10:00">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="tuesday" data-start="09:10" data-end="10:00">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="wednesday" data-start="09:10" data-end="10:00">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="thursday" data-start="09:10" data-end="10:00">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="friday" data-start="09:10" data-end="10:00">+ Add</a></td>
+                        <td class="timetablecell"><span class="blockedlabel">HOLIDAY</span></td>
+                    </tr>
+                    <tr>
+                        <td class="timetimecol">10:00 - 10:50</td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="monday" data-start="10:00" data-end="10:50">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="tuesday" data-start="10:00" data-end="10:50">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="wednesday" data-start="10:00" data-end="10:50">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="thursday" data-start="10:00" data-end="10:50">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="friday" data-start="10:00" data-end="10:50">+ Add</a></td>
+                        <td class="timetablecell"><span class="blockedlabel">HOLIDAY</span></td>
+                    </tr>
+                    <tr>
+                        <td class="timetimecol">10:50 - 11:40</td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="monday" data-start="10:50" data-end="11:40">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="tuesday" data-start="10:50" data-end="11:40">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="wednesday" data-start="10:50" data-end="11:40">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="thursday" data-start="10:50" data-end="11:40">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="friday" data-start="10:50" data-end="11:40">+ Add</a></td>
+                        <td class="timetablecell"><span class="blockedlabel">HOLIDAY</span></td>
+                    </tr>
+                    <tr>
+                        <td class="timetimecol">11:40 - 12:30</td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="monday" data-start="11:40" data-end="12:30">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="tuesday" data-start="11:40" data-end="12:30">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="wednesday" data-start="11:40" data-end="12:30">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="thursday" data-start="11:40" data-end="12:30">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="friday" data-start="11:40" data-end="12:30">+ Add</a></td>
+                        <td class="timetablecell"><span class="blockedlabel">HOLIDAY</span></td>
+                    </tr>
+                    <tr>
+                        <td class="timetimecol">12:30 - 01:10</td>
+                        <td class="timetablecell"><span class="blockedlabel">LUNCH</span></td>
+                        <td class="timetablecell"><span class="blockedlabel">LUNCH</span></td>
+                        <td class="timetablecell"><span class="blockedlabel">LUNCH</span></td>
+                        <td class="timetablecell"><span class="blockedlabel">LUNCH</span></td>
+                        <td class="timetablecell"><span class="blockedlabel">LUNCH</span></td>
+                        <td class="timetablecell"><span class="blockedlabel">HOLIDAY</span></td>
+                    </tr>
+                    <tr>
+                        <td class="timetimecol">01:10 - 02:00</td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="monday" data-start="13:10" data-end="14:00">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="tuesday" data-start="13:10" data-end="14:00">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="wednesday" data-start="13:10" data-end="14:00">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="thursday" data-start="13:10" data-end="14:00">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="friday" data-start="13:10" data-end="14:00">+ Add</a></td>
+                        <td class="timetablecell"><span class="blockedlabel">HOLIDAY</span></td>
+                    </tr>
+                    <tr>
+                        <td class="timetimecol">02:00 - 02:50</td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="monday" data-start="14:00" data-end="14:50">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="tuesday" data-start="14:00" data-end="14:50">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="wednesday" data-start="14:00" data-end="14:50">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="thursday" data-start="14:00" data-end="14:50">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="friday" data-start="14:00" data-end="14:50">+ Add</a></td>
+                        <td class="timetablecell"><span class="blockedlabel">HOLIDAY</span></td>
+                    </tr>
+                    <tr>
+                        <td class="timetimecol">02:50 - 03:40</td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="monday" data-start="14:50" data-end="15:40">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="tuesday" data-start="14:50" data-end="15:40">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="wednesday" data-start="14:50" data-end="15:40">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="thursday" data-start="14:50" data-end="15:40">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="friday" data-start="14:50" data-end="15:40">+ Add</a></td>
+                        <td class="timetablecell"><span class="blockedlabel">HOLIDAY</span></td>
+                    </tr>
+                    <tr>
+                        <td class="timetimecol">03:40 - 04:30</td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="monday" data-start="15:40" data-end="16:30">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="tuesday" data-start="15:40" data-end="16:30">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="wednesday" data-start="15:40" data-end="16:30">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="thursday" data-start="15:40" data-end="16:30">+ Add</a></td>
+                        <td class="timetablecell"><a href="#addtimetable" data-day="friday" data-start="15:40" data-end="16:30">+ Add</a></td>
+                        <td class="timetablecell"><span class="blockedlabel">HOLIDAY</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#navtimetable" class="backlink"><span class="material-icons" id="menuicon10">arrow_back</span>Back</a>
+        </div>
+    </section>
+
+    <section id="addtimetable">
+        <div class="addtimetable">
+            <h1>Add Timetable Entry</h1>
+            <form class="addtimetableform">
+                <label for="timetableday">Select Day</label>
+                <select name="timetableday" id="timetableday" required>
+                    <option value="" disabled selected>Select Day</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                </select>
+
+                <label for="timetablestart">Start Time</label>
+                <input type="time" name="timetablestart" id="timetablestart" required>
+
+                <label for="timetableend">End Time</label>
+                <input type="time" name="timetableend" id="timetableend" required>
+
+                <label for="timetablesection">Select Section</label>
+                <select name="timetablesection" id="timetablesection" required>
+                    <option value="" disabled selected>Select Section</option>
+                    <option value="2A">2A</option>
+                    <option value="2B">2B</option>
+                    <option value="2C">2C</option>
+                    <option value="2J">2J</option>
+                </select>
+
+                <label for="timetablesubject">Select Subject</label>
+                <select name="timetablesubject" id="timetablesubject" required>
+                    <option value="" disabled selected>Select Subject</option>
+                    <option value="dsa">Data Structures & Algorithms</option>
+                    <option value="python">Python</option>
+                    <option value="coa">Computer Operation & Architecture</option>
+                    <option value="de">Digital Electronics</option>
+                    <option value="tc">Technical Communication</option>
+                    <option value="dstl">DSTL</option>
+                </select>
+
+                <label for="timetableteacher">Select Teacher</label>
+                <select name="timetableteacher" id="timetableteacher">
+                    <option value="" disabled selected>Select Teacher</option>
+                </select>
+
+                <button type="submit" id="addtimetablebtn">Add Entry</button>
+            </form>
+            <a href="#navtimetable" class="backlink"><span class="material-icons" id="menuicon11">arrow_back</span>Back</a>
+        </div>
+    </section>
+    <script>
+        const timetableLinks = document.querySelectorAll(".timetablecell a");
+        timetableLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                const day = link.dataset.day;
+                const start = link.dataset.start;
+                const end = link.dataset.end;
+
+                document.getElementById("timetableday").value = day;
+                document.getElementById("timetablestart").value = start;
+                document.getElementById("timetableend").value = end;
+            });
+        });
+    </script>
+    <section id="holidaycalendar">
+        
+    </section>
+    </body>
+</html>

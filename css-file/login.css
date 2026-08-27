@@ -1,0 +1,130 @@
+/* Color palette (colorhunt.co/palette/00797924b1b1ffe2afe37434)
+   #007979 - dark teal   -> primary / headings / button
+   #24B1B1 - teal         -> accents / focus states
+   #FFE2AF - pale gold    -> page background
+   #E37434 - orange       -> highlights / links / errors avoided (kept red for errors)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFE2AF;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#heading h1 {
+    color: #007979;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+#heading h2 {
+    color: #E37434;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-top: 6px;
+}
+
+#box {
+    background-color: #ffffff;
+    border: 2px solid #24B1B1;
+    border-radius: 10px;
+    padding: 35px 40px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 4px 12px rgba(0, 121, 121, 0.15);
+}
+
+#box form {
+    display: flex;
+    flex-direction: column;
+}
+
+#box label {
+    color: #007979;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    margin-top: 16px;
+}
+
+#box label:first-of-type {
+    margin-top: 0;
+}
+
+#box input {
+    padding: 10px 12px;
+    border: 1.5px solid #24B1B1;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333333;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#box input:focus {
+    border-color: #E37434;
+    box-shadow: 0 0 0 3px rgba(227, 116, 52, 0.15);
+}
+
+.error-message {
+    color: #d32f2f;
+    background-color: #fdecea;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 13px;
+    margin-top: 16px;
+}
+
+#loginBtn {
+    margin-top: 24px;
+    padding: 12px;
+    background-color: #007979;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#loginBtn:hover {
+    background-color: #24B1B1;
+}
+
+#loginBtn:disabled {
+    background-color: #a8c5c5;
+    cursor: not-allowed;
+}
+
+#forgotpassword {
+    display: inline-block;
+    margin-top: 18px;
+    color: #E37434;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#forgotpassword:hover {
+    text-decoration: underline;
+}
