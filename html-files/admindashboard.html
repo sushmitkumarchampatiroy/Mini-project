@@ -383,8 +383,27 @@
         <div class="viewtimetable">
             <h1>Weekly Timetable</h1>
 
-            <label for="timetablefilter">Filter by Section</label>
-            <select name="timetablefilter" id="timetablefilter">
+            <label for="timetablefilter1">Filter by Year</label>
+            <select name="timetablefilter1" id="timetablefilter" required>
+                <option value="" selected>Select Year</option>
+                <option value="2A">First</option>
+                <option value="2B">Second</option>
+                <option value="2C">Third</option>
+                <option value="2J">Fourth</option>
+            </select>
+            <label for="timetablefilter2">Filter By Branch</label>
+            <select name="timetablefilter2" id="timetablefilter">
+                <option value="" selected>Select Branch</option>
+                <option value="2A">CSE</option>
+                <option value="2B">CS-AI/ML</option>
+                <option value="2C">CS-AI</option>
+                <option value="2J">CS-IT</option>
+                <option value="2J">MECHANICAL</option>
+                <option value="2J">ECE</option>
+                <option value="2J">ELECTICAL</option>
+            </select>
+            <label for="timetablefilter3">Filter by Section</label>
+            <select name="timetablefilter3" id="timetablefilter">
                 <option value="" selected>All Sections</option>
                 <option value="2A">2A</option>
                 <option value="2B">2B</option>
